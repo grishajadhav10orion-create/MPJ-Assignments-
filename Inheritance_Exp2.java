@@ -1,8 +1,9 @@
 class Employee
 {
-    double salary;
+    double before;
+    double after;
 
-    void displaySalary(double before, double after)
+    void displaySalary()
     {
         System.out.println("Salary before hike: " + before);
         System.out.println("Salary after hike: " + after);
@@ -11,21 +12,21 @@ class Employee
 
 class FullTimeEmployee extends Employee
 {
-    void calculateSalary(double sal)
+    void calculateSalary()
     {
-        double before = sal;
-        double after = sal + (sal * 50 / 100);
-        displaySalary(before, after);
+        before = 20000;
+        after = before + (before * 50 / 100);
+        displaySalary();
     }
 }
 
 class InternEmployee extends Employee
 {
-    void calculateSalary(double sal)
+    void calculateSalary()
     {
-        double before = sal;
-        double after = sal + (sal * 25 / 100);
-        displaySalary(before, after);
+        before = 10000;
+        after = before + (before * 25 / 100);
+        displaySalary();
     }
 }
 
@@ -33,12 +34,12 @@ public class Inheritance_Exp2
 {
     public static void main(String args[])
     {
-        FullTimeEmployee f = new FullTimeEmployee();
         System.out.println("Full Time Employee");
-        f.calculateSalary(20000);
+        FullTimeEmployee f = new FullTimeEmployee();
+        f.calculateSalary();
 
+        System.out.println("\nIntern Employee");
         InternEmployee i = new InternEmployee();
-        System.out.println("Intern Employee");
-        i.calculateSalary(10000);
+        i.calculateSalary();
     }
 }
